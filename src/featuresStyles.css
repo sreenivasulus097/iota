@@ -1,0 +1,224 @@
+
+.wraper {
+  padding: 50px;
+  text-align: center;
+  font-family: sans-serif;
+  width: 500px;
+  margin: 10px auto;
+  font-family: "Metropolis Bold";
+}
+
+.container {
+  border-top: 2px solid #000;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.carousel-container ul{
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+
+.link {
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+  cursor:pointer;
+}
+
+.link a {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.react-multi-carousel-track li:first-child {
+/*  margin-left: -55px; */
+margin-left: 15% !important;
+}
+
+.react-multi-carousel-track li:last-child {
+ /* margin-right: -55px; */
+ margin-right:15% !important;
+}
+
+
+.item-label {
+  position:absolute;
+  left:30%;
+  margin-top: -35%;
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 30px;
+  color: #FFFFFF;
+  z-index:999;
+}
+
+
+.link::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #00e0ca;
+  position: absolute;
+  border-radius: 10px;
+  top: -28px;
+  left: 50%;
+  transform: translatex(-50%);
+  border: 2px solid black;
+ /* transition: transform 0.5s ease;*/
+}
+
+.active::after,
+.link:hover::after {
+  
+background: #0FC1B7;
+padding: 90px;
+border-radius: 90px;
+opacity: 0.4;
+display: flex;
+flex-direction: column;
+top: -112px;
+
+}
+
+
+
+.react-multi-carousel-list{
+  /* position:static !important; */
+    position:relative !important;
+    overflow:unset !important;
+    margin-bottom: 8%;
+}
+
+.react-multi-carousel-track{
+    position:static !important;
+}
+.react-multi-carousel-track li{
+  position:static !important;
+} 
+
+.react-multiple-carousel__arrow--left {
+  left: calc(10% + 1px) !important;
+}
+
+.react-multiple-carousel__arrow--left::before {
+  font-size:medium !important;
+}
+.react-multiple-carousel__arrow--right {
+  right: calc(10% + 1px) !important;
+  
+}
+
+.react-multiple-carousel__arrow--right::before {
+  font-size:medium !important;
+}
+
+.react-multiple-carousel__arrow{
+  top:0;
+margin-top:-25px;
+min-width: 50px !important;
+min-height: 50px !important;
+background: #6B7486;
+opacity: 1;
+z-index:999;
+    
+}
+
+/*
+.react-multiple-carousel__arrow{
+  position:static !important;
+}
+.react-multi-carousel-dot-list{
+  position:static !important;
+} */
+
+
+.features-container {
+  position: relative;
+}
+
+
+#videoFeature{
+  position:absolute;
+  width:100%;
+  height:auto;  
+  z-index:-1;
+  top:0;
+}
+
+.video-text{
+  font-family: "Metropolis Bold";
+}
+
+
+.carousel-container div{
+color:#fff;
+}
+
+.active-item-label {
+  font-size: 24px;
+  font-weight: bold;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  position: absolute;
+  left: 0px;
+  width: 10%;
+  text-align: -webkit-center;
+    top: 0px;
+    margin-left: 30%;
+}
+
+.feature-title {
+  font-family: "Metropolis";
+  font-weight:700;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.5px;
+  align-items: center;
+  color: #fff;
+
+}
+.feature-desc {
+  font-family: 'Metropolis';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 30px;
+text-align: center;
+color: #FFFFFF;
+flex-wrap: wrap;
+}
+
+/* Desktop and Tablet */
+@media (min-width: 464px) and (max-width: 3000px){
+
+  .react-multi-carousel-list {
+      transform: none !important;
+  }
+  
+  .react-multi-carousel-list ul {
+      transform: none !important;
+  }
+
+}
+
+
+
