@@ -255,13 +255,15 @@ const Features = () => {
             >
               {carouselItem[0] === "active" ? (
                 <>
-                  <div className="item-label active-item-label">
+                  <div id="0" className="item-label active-item-label">
                     Social Impact
                   </div>
                   <span>Visit Page</span>
                 </>
               ) : (
-                <div className="item-label">Social Impact</div>
+                <div id="0" className="item-label">
+                  Social Impact
+                </div>
               )}
             </div>
             <div
@@ -272,11 +274,15 @@ const Features = () => {
               {carouselItem[1] === "active" ? (
                 <>
                   {" "}
-                  <div className="item-label active-item-label">Mobility</div>
+                  <div id="1" className="item-label active-item-label">
+                    Mobility
+                  </div>
                   <span>Visit Page</span>
                 </>
               ) : (
-                <div className="item-label">Mobility</div>
+                <div id="1" className="item-label">
+                  Mobility
+                </div>
               )}
             </div>
             <div
@@ -286,13 +292,15 @@ const Features = () => {
             >
               {carouselItem[2] === "active" ? (
                 <>
-                  <div className="item-label active-item-label">
+                  <div id="2" className="item-label active-item-label">
                     Smart Cities
                   </div>
                   <span>Visit Page</span>
                 </>
               ) : (
-                <div className="item-label">Smart Cities</div>
+                <div id="2" className="item-label">
+                  Smart Cities
+                </div>
               )}
             </div>
             <div
@@ -303,13 +311,15 @@ const Features = () => {
               {carouselItem[3] === "active" ? (
                 <>
                   {" "}
-                  <div className="item-label active-item-label">
+                  <div id="3" className="item-label active-item-label">
                     Global Trade
                   </div>
                   <span>Visit Page</span>
                 </>
               ) : (
-                <div className="item-label">Global Trade</div>
+                <div id="3" className="item-label">
+                  Global Trade
+                </div>
               )}
             </div>
             <div
@@ -320,13 +330,15 @@ const Features = () => {
               {carouselItem[maxCount] === "active" ? (
                 <>
                   {" "}
-                  <div className="item-label active-item-label">
+                  <div id="4" className="item-label active-item-label">
                     Digital Identity
                   </div>
                   <span>Visit Page</span>
                 </>
               ) : (
-                <div className="item-label">Digital Identity</div>
+                <div id="4" className="item-label">
+                  Digital Identity
+                </div>
               )}
             </div>
           </Carousel>
@@ -362,7 +374,6 @@ const Features = () => {
           id="videoFeature"
           controls
           autoPlay
-          playsInline
           loop={false}
           src={videoSrc}
           alt="IOTA"
