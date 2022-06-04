@@ -362,6 +362,7 @@ const Features = () => {
           id="videoFeature"
           controls
           autoPlay
+          playsInline
           loop={false}
           src={videoSrc}
           alt="IOTA"
