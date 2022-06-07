@@ -8,6 +8,7 @@ import digitalVideo from "../assets/videos/digital.mp4";
 import "../../node_modules/react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
 import "../featuresStyles.css";
+import { AnimatePresence, motion } from "framer-motion";
 import { featuresData } from "../data/featuresData";
 
 const Features = () => {
@@ -176,6 +177,24 @@ const Features = () => {
     handleCarouselActiveItem(slideId);
   };
 
+  //frame motion animation for circle
+  const sliderCircleVariants = {
+    hidden: {
+      rotate: 1,
+      opacity: 0.3,
+      scale: 0.6,
+    },
+    visible: {
+      rotate: 0,
+      opacity: 1,
+      scale: 1,
+      transition: { ease: "anticipate", duration: 2.5 },
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
+
   //carousel respoinsive device type handler
   const responsive = {
     desktop: {
@@ -248,99 +267,143 @@ const Features = () => {
             renderArrowsWhenDisabled={false}
             centerMode={true}
           >
-            <div
-              id="0"
-              className={`link ${carouselItem[0]}`}
-              onClick={(e) => handleItemClick(e)}
-            >
-              {carouselItem[0] === "active" ? (
-                <>
-                  <div id="0" className="item-label active-item-label">
+            {carouselItem[0] === "active" ? (
+              <AnimatePresence>
+                <motion.div
+                  variants={sliderCircleVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  id="0"
+                  className={`link ${carouselItem[0]}`}
+                  onClick={(e) => handleItemClick(e)}
+                >
+                  <div className="item-label active-item-label">
                     Social Impact
                   </div>
                   <span>Visit Page</span>
-                </>
-              ) : (
-                <div id="0" className="item-label">
-                  Social Impact
-                </div>
-              )}
-            </div>
-            <div
-              id="1"
-              className={`link ${carouselItem[1]}`}
-              onClick={(e) => handleItemClick(e)}
-            >
-              {carouselItem[1] === "active" ? (
-                <>
-                  {" "}
-                  <div id="1" className="item-label active-item-label">
-                    Mobility
-                  </div>
+                </motion.div>
+              </AnimatePresence>
+            ) : (
+              <div
+                id="0"
+                className={`link ${carouselItem[0]}`}
+                onClick={(e) => handleItemClick(e)}
+              >
+                {" "}
+                <div className="item-label">Social Impact</div>{" "}
+              </div>
+            )}
+
+            {carouselItem[1] === "active" ? (
+              <AnimatePresence>
+                <motion.div
+                  variants={sliderCircleVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  id="1"
+                  className={`link ${carouselItem[1]}`}
+                  onClick={(e) => handleItemClick(e)}
+                >
+                  <div className="item-label active-item-label">Mobility</div>
                   <span>Visit Page</span>
-                </>
-              ) : (
-                <div id="1" className="item-label">
-                  Mobility
-                </div>
-              )}
-            </div>
-            <div
-              id="2"
-              className={`link ${carouselItem[2]}`}
-              onClick={(e) => handleItemClick(e)}
-            >
-              {carouselItem[2] === "active" ? (
-                <>
-                  <div id="2" className="item-label active-item-label">
+                </motion.div>
+              </AnimatePresence>
+            ) : (
+              <div
+                id="1"
+                className={`link ${carouselItem[1]}`}
+                onClick={(e) => handleItemClick(e)}
+              >
+                {" "}
+                <div className="item-label">Mobility</div>
+              </div>
+            )}
+
+            {carouselItem[2] === "active" ? (
+              <AnimatePresence>
+                <motion.div
+                  variants={sliderCircleVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  id="2"
+                  className={`link ${carouselItem[2]}`}
+                  onClick={(e) => handleItemClick(e)}
+                >
+                  <div className="item-label active-item-label">
                     Smart Cities
                   </div>
                   <span>Visit Page</span>
-                </>
-              ) : (
-                <div id="2" className="item-label">
-                  Smart Cities
-                </div>
-              )}
-            </div>
-            <div
-              id="3"
-              className={`link ${carouselItem[3]}`}
-              onClick={(e) => handleItemClick(e)}
-            >
-              {carouselItem[3] === "active" ? (
-                <>
+                </motion.div>
+              </AnimatePresence>
+            ) : (
+              <div
+                id="2"
+                className={`link ${carouselItem[2]}`}
+                onClick={(e) => handleItemClick(e)}
+              >
+                <div className="item-label">Smart Cities</div>
+              </div>
+            )}
+
+            {carouselItem[3] === "active" ? (
+              <AnimatePresence>
+                <motion.div
+                  variants={sliderCircleVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  id="3"
+                  className={`link ${carouselItem[3]}`}
+                  onClick={(e) => handleItemClick(e)}
+                >
                   {" "}
-                  <div id="3" className="item-label active-item-label">
+                  <div className="item-label active-item-label">
                     Global Trade
                   </div>
                   <span>Visit Page</span>
-                </>
-              ) : (
-                <div id="3" className="item-label">
-                  Global Trade
-                </div>
-              )}
-            </div>
-            <div
-              id="4"
-              className={`link ${carouselItem[maxCount]}`}
-              onClick={(e) => handleItemClick(e)}
-            >
-              {carouselItem[maxCount] === "active" ? (
-                <>
-                  {" "}
-                  <div id="4" className="item-label active-item-label">
+                </motion.div>
+              </AnimatePresence>
+            ) : (
+              <div
+                id="3"
+                className={`link ${carouselItem[3]}`}
+                onClick={(e) => handleItemClick(e)}
+              >
+                {" "}
+                <div className="item-label">Global Trade</div>{" "}
+              </div>
+            )}
+
+            {carouselItem[4] === "active" ? (
+              <AnimatePresence>
+                <motion.div
+                  variants={sliderCircleVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  id="4"
+                  className={`link ${carouselItem[4]}`}
+                  onClick={(e) => handleItemClick(e)}
+                >
+                  <div className="item-label active-item-label">
                     Digital Identity
                   </div>
                   <span>Visit Page</span>
-                </>
-              ) : (
-                <div id="4" className="item-label">
-                  Digital Identity
-                </div>
-              )}
-            </div>
+                </motion.div>
+              </AnimatePresence>
+            ) : (
+              <div
+                id="4"
+                className={`link ${carouselItem[4]}`}
+                onClick={(e) => handleItemClick(e)}
+              >
+                {" "}
+                <div className="item-label">Digital Identity</div>
+              </div>
+            )}
           </Carousel>
 
           {/*  */}

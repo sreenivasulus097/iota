@@ -72,16 +72,20 @@ margin-left: 15% !important;
 
 .link::after {
   content: "";
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   background: #00e0ca;
   position: absolute;
   border-radius: 10px;
-  top: -28px;
+  top: -26px;
   left: 50%;
   transform: translatex(-50%);
-  border: 2px solid black;
+ /* border: 2px solid black; */
  /* transition: transform 0.5s ease;*/
+}
+
+.link :active {
+  width: 50px;
 }
 
 .active::after,
