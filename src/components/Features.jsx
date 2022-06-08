@@ -188,7 +188,7 @@ const Features = () => {
       rotate: 0,
       opacity: 1,
       scale: 1,
-      transition: { ease: "anticipate", duration: 2.5 },
+      transition: { ease: "anticipate", duration: 2 },
     },
     exit: {
       opacity: 0,
@@ -278,9 +278,7 @@ const Features = () => {
                   className={`link ${carouselItem[0]}`}
                   onClick={(e) => handleItemClick(e)}
                 >
-                  <div className="item-label active-item-label">
-                    Social Impact
-                  </div>
+                  <div className="active-item-label">Social Impact</div>
                   <span>Visit Page</span>
                 </motion.div>
               </AnimatePresence>
@@ -290,8 +288,9 @@ const Features = () => {
                 className={`link ${carouselItem[0]}`}
                 onClick={(e) => handleItemClick(e)}
               >
-                {" "}
-                <div className="item-label">Social Impact</div>{" "}
+                <div id="0" className="item-label">
+                  Social Impact
+                </div>
               </div>
             )}
 
@@ -306,7 +305,7 @@ const Features = () => {
                   className={`link ${carouselItem[1]}`}
                   onClick={(e) => handleItemClick(e)}
                 >
-                  <div className="item-label active-item-label">Mobility</div>
+                  <div className="active-item-label">Mobility</div>
                   <span>Visit Page</span>
                 </motion.div>
               </AnimatePresence>
@@ -316,8 +315,9 @@ const Features = () => {
                 className={`link ${carouselItem[1]}`}
                 onClick={(e) => handleItemClick(e)}
               >
-                {" "}
-                <div className="item-label">Mobility</div>
+                <div id="1" className="item-label">
+                  Mobility
+                </div>
               </div>
             )}
 
@@ -332,9 +332,7 @@ const Features = () => {
                   className={`link ${carouselItem[2]}`}
                   onClick={(e) => handleItemClick(e)}
                 >
-                  <div className="item-label active-item-label">
-                    Smart Cities
-                  </div>
+                  <div className="active-item-label">Smart Cities</div>
                   <span>Visit Page</span>
                 </motion.div>
               </AnimatePresence>
@@ -344,7 +342,9 @@ const Features = () => {
                 className={`link ${carouselItem[2]}`}
                 onClick={(e) => handleItemClick(e)}
               >
-                <div className="item-label">Smart Cities</div>
+                <div id="2" className="item-label">
+                  Smart Cities
+                </div>
               </div>
             )}
 
@@ -359,10 +359,7 @@ const Features = () => {
                   className={`link ${carouselItem[3]}`}
                   onClick={(e) => handleItemClick(e)}
                 >
-                  {" "}
-                  <div className="item-label active-item-label">
-                    Global Trade
-                  </div>
+                  <div className="active-item-label">Global Trade</div>
                   <span>Visit Page</span>
                 </motion.div>
               </AnimatePresence>
@@ -372,8 +369,9 @@ const Features = () => {
                 className={`link ${carouselItem[3]}`}
                 onClick={(e) => handleItemClick(e)}
               >
-                {" "}
-                <div className="item-label">Global Trade</div>{" "}
+                <div id="3" className="item-label">
+                  Global Trade
+                </div>
               </div>
             )}
 
@@ -388,9 +386,7 @@ const Features = () => {
                   className={`link ${carouselItem[4]}`}
                   onClick={(e) => handleItemClick(e)}
                 >
-                  <div className="item-label active-item-label">
-                    Digital Identity
-                  </div>
+                  <div className="active-item-label">Digital Identity</div>
                   <span>Visit Page</span>
                 </motion.div>
               </AnimatePresence>
@@ -400,13 +396,13 @@ const Features = () => {
                 className={`link ${carouselItem[4]}`}
                 onClick={(e) => handleItemClick(e)}
               >
-                {" "}
-                <div className="item-label">Digital Identity</div>
+                <div id="4" className="item-label">
+                  Digital Identity
+                </div>
               </div>
             )}
           </Carousel>
 
-          {/*  */}
           <Container maxW="container.lg" mb="8%">
             <Grid
               templateColumns={{
