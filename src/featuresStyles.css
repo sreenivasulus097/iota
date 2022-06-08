@@ -56,22 +56,24 @@ margin-left: 15% !important;
 }
 
 
-.item-label {
-  position:absolute;
-  left:30%;
-  margin-top: -35%;
-  font-family: 'Metropolis';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 30px;
-  color: #FFFFFF;
-  z-index:999;
-}
 
 
-.link::after {
-  content: "";
+
+ .link::after /* .link.active */ {
+
+ /*  for active
+ content: "";
+  width: 80px;
+  height: 3px;
+  background: #00e0ca;
+  position: absolute;
+  border-radius: 10px;
+  top: -15px;
+  left: 50%;
+  transform: translatex(-50%); */
+
+
+ content: "";
   width: 8px;
   height: 8px;
   background: #00e0ca;
@@ -79,19 +81,25 @@ margin-left: 15% !important;
   border-radius: 10px;
   top: -26px;
   left: 50%;
-  transform: translatex(-50%);
+  transform: translatex(-50%); 
+
+
  /* border: 2px solid black; */
  /* transition: transform 0.5s ease;*/
 }
 
-.link :active {
-  width: 50px;
-}
+/*.link.active {
+  width:8px;
+  height:8px;
+  background: #00e0ca;
+} */
+
+
+
 
 .active::after,
 .link:hover::after {
-  
-background: #0FC1B7;
+  background: #0FC1B7;
 padding: 90px;
 border-radius: 90px;
 opacity: 0.4;
@@ -100,8 +108,6 @@ flex-direction: column;
 top: -112px;
 
 }
-
-
 
 .react-multi-carousel-list{
   /* position:static !important; */
@@ -175,16 +181,33 @@ z-index:999;
 color:#fff;
 }
 
+.item-label {
+  position:absolute;
+  left:30%;
+  margin-top: -35%;
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 30px;
+  color: #FFFFFF;
+  z-index:999;
+}
+
+
 .active-item-label {
   font-size: 24px;
   font-weight: bold;
   word-wrap: break-word;
+  margin-top: -38%;
   display: flex;
   flex-direction: row;
+  font-family: 'Metropolis';
   padding-left: 0;
   position: absolute;
   left: 0px;
   width: 10%;
+  line-height: 25px;
   text-align: -webkit-center;
     top: 0px;
     margin-left: 30%;
