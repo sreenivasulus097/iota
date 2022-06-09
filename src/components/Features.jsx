@@ -128,7 +128,8 @@ const Features = () => {
       carouselState: { currentSlide },
     } = rest;
     rest.carouselState.currentSlide = curSlideState;
-    // console.log("rest", rest);
+    console.log("rest", rest.carouselState.deviceType);
+
     //console.log("rest", rest.carouselState.currentSlide);
     return (
       <div className="">
@@ -188,7 +189,7 @@ const Features = () => {
       rotate: 0,
       opacity: 1,
       scale: 1,
-      transition: { ease: "anticipate", duration: 2 },
+      transition: { ease: "anticipate", duration: 1.5 },
     },
     exit: {
       opacity: 0,
@@ -197,6 +198,11 @@ const Features = () => {
 
   //carousel respoinsive device type handler
   const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+      slidesToSlide: 1,
+    },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 5,
@@ -225,23 +231,21 @@ const Features = () => {
             mx="auto"
             textTransform="uppercase"
             pb="8"
-            fontSize="1rem"
             pt="5rem"
             fontFamily="Metropolis Bold"
-            lineHeight="1.5"
             color="rgb(15, 193, 183)"
             fontWeight="bold"
+            className="text-heading"
           >
             Industries
           </Heading>
           <Heading
             as="h2"
-            fontSize="2rem"
             textAlign="center"
-            color="rgb(246, 248, 252)"
+            color="#F6F8FC"
             mx="auto"
-            w="25%"
-            mb="14%"
+            fontFamily="Metropolis"
+            className="text-sub-heading"
           >
             IOTA Enables Now Possibilities
           </Heading>
@@ -260,7 +264,6 @@ const Features = () => {
             keyBoardControl={true}
             /*  transitionDuration={500}*/
             containerClass="carousel-container"
-            deviceType={responsive}
             customStyles={carouselStyles}
             dotListClass="custom-dot-list-style"
             arrows={false}
@@ -403,16 +406,8 @@ const Features = () => {
             )}
           </Carousel>
 
-          <Container maxW="container.lg" mb="8%">
-            <Grid
-              templateColumns={{
-                sm: "repeat(3, 1fr)",
-                md: "repeat(3,1fr)",
-                lg: "repeat(3,1fr)",
-                xl: "repeat(3,1fr)",
-              }}
-              gap={6}
-            >
+          <Container maxW="container.lg" pb="5%">
+            <Grid templateColumns="repeat(3, 1fr)" gap={6}>
               {filterFeaturesData.map((data) => {
                 return (
                   <>
