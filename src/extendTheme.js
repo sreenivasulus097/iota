@@ -18,8 +18,8 @@ const customTheme = extendTheme({
       },
     },
     fonts: {
-      body: 'Graphik Font',
-      heading: 'Graphik Font',
+      body: 'Metropolis Light',
+      heading: 'Metropolis Bold',
     },
     fontWeights: {
       hairline: 100,
