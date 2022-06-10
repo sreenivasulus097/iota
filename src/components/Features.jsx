@@ -412,7 +412,12 @@ const Features = () => {
                 return (
                   <>
                     <Box alignItems="center">
-                      <Image src={data.image} alt="Image One" margin="auto" />
+                      <Image
+                        src={data.image}
+                        alt="Image One"
+                        margin="auto"
+                        mb="1rem"
+                      />
                       <Text className="feature-title">{data.title}</Text>
                       <Text className="feature-desc">{data.description}</Text>
                     </Box>
