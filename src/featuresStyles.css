@@ -187,7 +187,7 @@ color:#fff;
   position:absolute;
   left:30%;
   margin-top: -35%;
-  font-family: 'Metropolis';
+  font-family: 'Metropolis Light';
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -204,7 +204,7 @@ color:#fff;
   margin-top: -38%;
   display: flex;
   flex-direction: row;
-  font-family: 'Metropolis';
+  font-family: 'Metropolis Light';
   padding-left: 0;
   position: absolute;
   left: 0px;
@@ -216,7 +216,7 @@ color:#fff;
 }
 
 .feature-title {
-  font-family: "Metropolis";
+  font-family: "Metropolis Bold";
   font-weight:700;
   font-size: 20px;
   line-height: 30px;
@@ -226,7 +226,7 @@ color:#fff;
 
 }
 .feature-desc {
-  font-family: 'Metropolis';
+  font-family: 'Metropolis Light';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;

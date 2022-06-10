@@ -244,7 +244,7 @@ const Features = () => {
             textAlign="center"
             color="#F6F8FC"
             mx="auto"
-            fontFamily="Metropolis"
+            fontFamily="Metropolis Bold"
             className="text-sub-heading"
           >
             IOTA Enables Now Possibilities
