@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { blogData } from "../data/blogData";
+
 import {
   Text,
   Heading,
   Box,
-  UnorderedList,
-  ListItem,
   Grid,
   GridItem,
+
   transition,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
-const CardWrapper = ({ children, setHoveredCard, bgImage }) => {
+const CardWrapper = ({ children, bgImage }) => {
   return (
     <Box
       h={"100%"}
@@ -25,11 +25,17 @@ const CardWrapper = ({ children, setHoveredCard, bgImage }) => {
       overflow="hidden"
       bg="white"
       bgImage={bgImage}
+      bgRepeat="no-repeat"
+      bgSize="cover"
       _hover={{
-        cursor: "pointer"
+        cursor: "pointer",
+        "& .card-content":{ transform: "translate(-50%,-50%)"},
+        "& .hidden-text":{
+          opacity: "1",
+        },
+        "& .backdrop":
+        {transform:"scale(2)"}
       }}
-      onMouseEnter={() => setHoveredCard(true)}
-      onMouseLeave={() => setHoveredCard(false)}
     >
       {children}
     </Box>
@@ -43,8 +49,8 @@ const FirstCard = () => {
         textAlign="left">
         
       <Heading fontSize="1rem" color="#00e0ca">EXPLORE</Heading>
-      <Heading>IOTA Foundation</Heading>
-      <Text fontSize="1rem" maxW={"75%"}>
+      <Heading color="black">IOTA Foundation</Heading>
+      <Text fontSize="1rem" maxW={"75%"} color="rgb(72,87,118)">
         Learn about the deep expertise that drives the IOTA foundation
       </Text>
       <CardLink linkText="View all departments" color="black" firstCardLink={true}/>
@@ -54,40 +60,46 @@ const FirstCard = () => {
   );
 };
 const BlogCard = ({ blog }) => {
-  const [hoveredCard, setHoveredCard] = useState(false);
   return (
-    <CardWrapper setHoveredCard={setHoveredCard} bgImage={blog.image}>
+    <CardWrapper  bgImage={blog.image}>
        <Box
+       className="backdrop"
+       display={["none","none","block"]}
         position="absolute"
         left="0"
         top={"0"}
         w="100%"
         h="100%"
-        transform={hoveredCard ? "scale(2)" : "scale(0)"}
-        transition="all 700ms"
+        transform=  "scale(0)"
+        transition="all 650ms"
         borderRadius="50rem"
-        bg="#00e0ca"
-        opacity="0.2"
+        bg="linear-gradient(315deg,#00e0ca 8.22%,#0fc1b7)"
+        opacity="0.5"
+        
       ></Box>
       <Box
+      className="card-content"
         position="absolute"
         left="50%"
         top={"50%"}
-        transform={
-          hoveredCard ? "translate(-50%,-25%)" : "translate(-50%,-50%)"
-        }
+        transform={["translate(-50%,-50%)","translate(-50%,-50%)","translate(-50%,-25%)",]}
         transition="transform 100ms"
         textAlign="center"
         width="100%"
         color="white"
+       
       >
         <Heading fontSize={"1.9rem"}>{blog.title}</Heading>
         <Text
+        className="hidden-text"
+        display={["none","none","block"]}
+
           fontSize={"1rem"}
-          opacity={hoveredCard ? "1" : "0"}
+          opacity="0"
           transition="opacity 200ms"
           mt="1.5rem"
           color="white"
+        
         >
           {blog.description}
         </Text>
@@ -118,7 +130,7 @@ const CardLink=({linkText,linkHref,color,firstCardLink})=>{
   </Text>
   <ChevronRightIcon
     color="#00E0CA"
-    boxSize="6"
+    boxSize="5"
     transform={hoveredLink && "translateX(7px)"}
     transition="transform 200ms"
   />
@@ -126,14 +138,13 @@ const CardLink=({linkText,linkHref,color,firstCardLink})=>{
 }
 const Blog = () => {
   return (
-    <Box my="2rem" w="100%" bg="#F6F9FD" py="5rem">
+    <Box my="4rem 2rem" w="100%" bg="#F6F9FD" py="5rem" >
       <Box mx={"auto"} maxWidth={1000} className="blog-container">
         <Grid
-          templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(1, 320px)","repeat(2, 320px)","repeat(3, 320px)"]}
-          templateRows={["repeat(1, 260px)","repeat(6, 260px)","repeat(6, 320px)","repeat(3, 320px)","repeat(2, 320px)"]}
+          templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 320px)","repeat(2, 320px)","repeat(3, 320px)"]}
+          templateRows={["repeat(1, 220px)","repeat(6, 220px)","repeat(3, 320px)","repeat(3, 320px)","repeat(2, 320px)"]}
           gap={[0,0,6,6]}
           justifyContent="center"
-          margin="0 3%"
 >
           <GridItem>
             <FirstCard />

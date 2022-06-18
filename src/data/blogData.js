@@ -12,7 +12,7 @@ export const blogData=[
         "title":"Research",
         "description":"Discover more about our world-class team and their research"
     ,"image":"/images/blog_image_4.jpg"},{
-        "title":"PR and Communication",
+        "title":"PR & Communication",
         "description":"The PR and Comms department works with media and beyond.Speak to us for media enquiries"
     ,"image":"/images/blog_image_5.jpg"}
 ]
