@@ -1,0 +1,13 @@
+.box{
+    width: 80px;
+    height: 3px;
+    background: #4FD1C5;
+}
+
+.btn{
+    background: #4FD1C5;
+}
+
+.btn:hover{
+    background: #25e5d2;
+}
